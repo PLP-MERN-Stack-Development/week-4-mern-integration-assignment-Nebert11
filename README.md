@@ -101,8 +101,11 @@ The frontend will run on [http://localhost:5173](http://localhost:5173) and the 
 - Update categories in `CreatePost.jsx` as needed.
 - Tailwind CSS is used for all styling—customize in `tailwind.config.js`.
 
-## License
-MIT
+## Screenshots
+![image](https://github.com/user-attachments/assets/212c2421-7023-47e0-8d47-75662794c922)
+![image](https://github.com/user-attachments/assets/3bc20f9f-fc4c-4fbc-9cfe-22a860e853fc)
+![image](https://github.com/user-attachments/assets/db4b72f8-4c66-4247-9ca3-6010105aadc5)
+
 
 ---
 
