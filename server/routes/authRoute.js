@@ -58,16 +58,22 @@ router.get("/logout", async(req, res) => {
 
 //Refetch
 router.get("/refetch", async(req, res) => {
-    const token = req.cookies.token
-    if (!token) {
-        return res.status(401).json({ message: "No token, not authenticated" })
-    }
-    jwt.verify(token, process.env.SECRET, {}, async(err, data)=>{
-        if(err){
-            return res.status(401).json({ message: "Invalid or expired token" })
+    try {
+        const token = req.cookies?.token;
+        if (!token) {
+            return res.status(401).json({ message: "No token, not authenticated" });
         }
-        res.status(200).json(data)
-    })
-})
+        
+        jwt.verify(token, process.env.SECRET, {}, async(err, data) => {
+            if(err){
+                return res.status(401).json({ message: "Invalid or expired token" });
+            }
+            res.status(200).json(data);
+        });
+    } catch (error) {
+        console.error('Refetch error:', error);
+        res.status(500).json({ message: "Internal server error" });
+    }
+});
 
 module.exports =router
